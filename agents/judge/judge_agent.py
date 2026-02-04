@@ -1,11 +1,19 @@
+# agents/judge/judge_agent.py
+
 class JudgeAgent:
     def __init__(self, name="Judge"):
         self.name = name
 
-    def review_task(self, task_result):
+    def evaluate(self, task_result):
         """
-        Decide if a task meets compliance and safety requirements
+        Evaluates the result of a worker's task.
+        Returns a simple pass/fail evaluation.
         """
-        print(f"{self.name} reviewing task result...")
-        # Placeholder logic: approve everything for now
-        return {"approved": True, "notes": "All good"}
+        # For now, we can just mark everything as 'approved'
+        evaluation = {
+            "task_status": task_result.get("status", "unknown"),
+            "approved": True,
+            "notes": f"Task reviewed by {self.name}"
+        }
+        print(f"{self.name} evaluating task: {task_result['output']}")
+        return evaluation
