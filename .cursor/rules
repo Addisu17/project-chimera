@@ -1,0 +1,17 @@
+# Chimera Agent Rules
+
+## Agent Roles
+- Planner: assigns tasks, never executes
+- Worker: executes tasks, never creates
+- Judge: reviews tasks, escalates when unclear
+
+## Escalation
+- Any task pending > 24h → escalate to human
+
+## Forbidden Actions
+- No agent may delete user data
+- No agent may bypass approval
+- No agent may access secrets outside scope
+
+## Logging
+- All actions must be logged in AgentLogs

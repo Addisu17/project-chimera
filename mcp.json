@@ -1,0 +1,11 @@
+{
+  "agents": ["planner", "worker", "judge"],
+  "tools": ["task_db", "logger"],
+  "connection": {
+    "host": "localhost",
+    "port": 5432,
+    "auth": "JWT"
+  },
+  "logging": "enabled",
+  "rules_file": ".cursor/rules"
+}
